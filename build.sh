@@ -1,6 +1,6 @@
 CURRENT_PATH=`pwd`                            #目录
-PUSH_IP="192.168.1.1"                         #服务器IP
-EXCUTE_PATH="/server/www/"                    #服务器上传位置路径
+PUSH_IP="http://47.98.59.156"                         #服务器IP
+EXCUTE_PATH="/www/wwwroot/http"                    #服务器上传位置路径
 BACK_UP="/backup/www/textProject/"            #备份文件夹路径
 PROJECT_PATH="textProject"                    #打包文件夹名称（项目名）
 PROJECT_NAME="textProject.tar.gz"             #打包tar名称
@@ -12,8 +12,8 @@ npm -v
 #更新库（预防有新增的库）
 npm install
 
-#打包demo环境（我这是demo环境，所以直接-demo环境了）
-npm run build -demo
+#打包
+npm run build
 
 #进入目录
 cd $CURRENT_PATH
