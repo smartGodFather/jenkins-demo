@@ -29,12 +29,10 @@ rm -rf $PROJECT_NAME
 tar -zcvf $PROJECT_NAME $PROJECT_PATH/
 
 #将tar包上传到服务器
-scp -r $CURRENT_PATH/$PROJECT_NAME root@$PUSH_IP:$EXCUTE_PATH
-
+scp -i $PEM_PATH $CURRENT_PATH/$PROJECT_NAME root@$PUSH_IP:$EXCUTE_PATH
 echo "准备登录服务器"
 #登录服务器
-# ssh -t root@47.98.59.156 -i /download/longma.pem
-ssh -t root@$PUSH_IP -i $PEM_PATH << eeooff
+ssh -i $PEM_PATH -t root@$PUSH_IP << eeooff
 
 #进入服务器目录
 cd $EXCUTE_PATH
