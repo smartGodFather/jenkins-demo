@@ -1,8 +1,8 @@
 CURRENT_PATH=`pwd`                     #目录
-# CURRENT_PATH="./"                     #目录
+# CURRENT_PATH="./"                    #目录
 PUSH_IP="47.98.59.156"                 #服务器IP
 EXCUTE_PATH="/www/wwwroot/http"        #服务器上传位置路径
-PEM_PATH="/download/longma.pem"        #服务器登录秘钥
+PEM_PATH="/longma.pem"                 #服务器登录秘钥
 BACK_UP="/backup/www/dist/"            #备份文件夹路径
 PROJECT_PATH="dist"                    #打包文件夹名称（项目名）
 PROJECT_NAME="dist.tar.gz"             #打包tar名称
@@ -31,6 +31,7 @@ tar -zcvf $PROJECT_NAME $PROJECT_PATH/
 #将tar包上传到服务器
 scp -r $CURRENT_PATH/$PROJECT_NAME root@$PUSH_IP:$EXCUTE_PATH
 
+echo "准备登录服务器"
 #登录服务器
 # ssh -t root@47.98.59.156 -i /download/longma.pem
 ssh -t root@$PUSH_IP -i $PEM_PATH << eeooff
